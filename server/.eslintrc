@@ -1,0 +1,17 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": ["eslint:recommended", "airbnb-base", "prettier", "plugin:prettier/recommended"],
+  "plugins": ["prettier"],
+  "rules": {
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "windows"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "no-console": "warn",
+    "no-underscore-dangle": "off"
+  }
+}
