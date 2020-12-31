@@ -16,8 +16,8 @@ app.use(express.json());
 
 // routing
 app.use('/api/v1/', (req, res) => {
-  res.json({
-    message: 'Hello World!'
+  res.status(200).json({
+    message: 'Hello world'
   });
 });
 
