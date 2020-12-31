@@ -5,9 +5,10 @@
   "main": "src/index.js",
   "scripts": {
     "pre-commit": "lint-staged",
-    "start": "node ./dist/index.js",
-    "dev": "nodemon ./src/index.js --exec babel-node",
-    "build": "babel src --out-dir dist"
+    "start": "MODE=prod node ./dist/index.js",
+    "dev": "MODE=dev nodemon ./src/index.js --exec babel-node",
+    "build": "MODE=prod babel src --out-dir dist",
+    "test:app": "jest ./app/"
   },
   "keywords": [],
   "author": "",
