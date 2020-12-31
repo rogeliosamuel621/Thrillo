@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import { connect } from 'mongoose';
-const MODE = process.env.MODE;
 
 const database = async () => {
   try {
@@ -10,7 +9,7 @@ const database = async () => {
       useUnifiedTopology: true,
       useFindAndModify: false
     });
-    MODE === 'dev' ? console.log('DATABASE CONNECTED') : null;
+    console.log('DATABASE CONNECTED');
   } catch (error) {
     console.log('SOMETHING WENT WRONG', error);
     process.exit(1);
