@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import database from './config/database';
+import { handlerErrors } from './middleware';
 
 // load env variables
 dotenv.config();
@@ -11,7 +12,7 @@ const app = express();
 // database connection
 database();
 
-// middlewares
+// middlewares input
 app.use(express.json());
 
 // routing
@@ -20,5 +21,8 @@ app.use('/api/v1/', (req, res) => {
     message: 'Hello world'
   });
 });
+
+//midlewares output
+app.use(handlerErrors);
 
 export default app;
