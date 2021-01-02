@@ -1,9 +1,11 @@
 import React from 'react';
 
+import { Nav } from '../molecules/';
+
 const Register = () => {
   return (
     <>
-      <h1>Register</h1>
+      <Nav />
     </>
   );
 };
