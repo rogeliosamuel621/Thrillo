@@ -1,10 +1,15 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import { Register } from './components/pages';
 
 const App = () => {
   return (
-    <>
-      <h1>Hello world</h1>
-    </>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Register} />
+      </Switch>
+    </BrowserRouter>
   );
 };
 
