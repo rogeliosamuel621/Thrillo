@@ -9,4 +9,4 @@ const TaskSchema = new Schema({
   }
 });
 
-export default model('task', TaskSchema);
+export default model('Task', TaskSchema);
