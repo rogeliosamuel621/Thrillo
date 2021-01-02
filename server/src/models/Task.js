@@ -1,12 +1,12 @@
 import { model, Schema } from 'mongoose';
 
-const taskSchema = new Schema({
-  boardId: { type: String, required: true },
-  todoId: { type: Schema.Types.ObjectId, ref: 'list', required: true },
+const TaskSchema = new Schema({
   title: { type: String, required: true },
-  description: { type: String, required: true }
+  description: { type: String, required: true },
+  column: {
+    type: Schema.Types.ObjectId,
+    ref: 'Column'
+  }
 });
 
-const Task = model('tasks', taskSchema);
-
-export default Task;
+export default model('task', TaskSchema);
