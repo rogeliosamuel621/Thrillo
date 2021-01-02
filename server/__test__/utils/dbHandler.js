@@ -11,7 +11,7 @@ const dbConnection = async (done) => {
 
 const dbClose = async (done) => {
   await mongoose.connection.close();
-  done;
+  done();
 };
 
 export { dbClose, dbConnection };
