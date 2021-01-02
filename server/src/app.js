@@ -22,7 +22,7 @@ app.use('/api/v1/', (req, res) => {
   });
 });
 
-//midlewares output
+// midlewares output
 app.use(handlerErrors);
 
 export default app;
