@@ -23,11 +23,14 @@ const registerController = async (req, res, next) => {
       username
     });
 
-    user.save();
-
-    return res.status(200).json({
-      msg: 'USER REGISTERED',
-      data: null
+    user.save((err) => {
+      if (err) {
+        return next(new ErrorHandler(400, 'EMAIL ALREADY TAKEN', err));
+      }
+      return res.status(200).json({
+        msg: 'USER REGISTERED',
+        data: null
+      });
     });
   } catch (err) {
     return next(new ErrorHandler(500, 'INTERNAL SERVER ERROR', err));
