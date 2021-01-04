@@ -10,11 +10,12 @@ const registerController = async (req, res, next) => {
     return next(new ErrorHandler(400, 'WRONG DATA SCHEMA', errors.array()));
   }
 
-  const { email, password, username } = req.body;
+  const { email, username } = req.body;
 
   try {
-    const hashedPassword = await argon.hash(password);
-    password = undefined;
+    const hashedPassword = await argon.hash(req.body.password);
+    delete req.body.password;
+    console.log(req.body.password);
 
     const user = new User({
       email,
