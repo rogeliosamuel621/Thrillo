@@ -1,6 +1,6 @@
 import React from 'react'
 import "../../styles/pages/board.css"
-import { Nav } from '../molecules/';
+import { Nav,BoardCard } from '../molecules/';
 const Board = () => {
     return (
         <>
@@ -13,47 +13,10 @@ const Board = () => {
             </button>
         </div>
         <div className="container-board">
-            <div className="item">
-                <img href="#" className="img-board" />
-                <p>Dev challenge</p>
-                <div className="container-collaborators">
-                    <div className="avatar-collaborators">RS</div>
-                    <div className="avatar-collaborators">RS</div>
-                    <div className="avatar-collaborators">RS</div>
-                    <p>+ 5 others</p>
-                </div>
-            </div>
-            <div className="item">
-                <img href="#" className="img-board" />
-                <p>Dev challenge</p>
-                <div className="container-collaborators">
-                    <div className="avatar-collaborators">RS</div>
-                    <div className="avatar-collaborators">RS</div>
-                    <div className="avatar-collaborators">RS</div>
-                    <p>+ 5 others</p>
-                </div>
-            </div>
-            <div className="item">
-                <img href="#" className="img-board" />
-                <p>Dev challenge</p>
-                <div className="container-collaborators">
-                    <div className="avatar-collaborators">RS</div>
-                    <div className="avatar-collaborators">RS</div>
-                    <div className="avatar-collaborators">RS</div>
-                    <p>+ 5 others</p>
-                </div>
-            </div>
-            <div className="item">
-                <img href="#" className="img-board" />
-                <p>Dev challenge</p>
-                <div className="container-collaborators">
-                    <div className="avatar-collaborators">RS</div>
-                    <div className="avatar-collaborators">RS</div>
-                    <div className="avatar-collaborators">RS</div>
-                    <p>+ 5 others</p>
-                </div>
-            </div>
-
+            <BoardCard />
+            <BoardCard />
+            <BoardCard />
+            <BoardCard />
         </div>
     </div>
     </>

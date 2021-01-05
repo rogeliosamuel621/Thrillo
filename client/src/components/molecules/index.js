@@ -1,3 +1,4 @@
 import Nav from './Nav';
+import BoardCard from './BoardCard';
 
-export { Nav };
+export { Nav, BoardCard };
