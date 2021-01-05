@@ -1,11 +1,11 @@
 import { Router } from 'express';
-import { registerController } from '../controllers';
+import { register } from '../controllers/auth.controllers';
 import { registerValidator } from '../validators/auth.validators';
 
 const router = Router();
 
 function AuthRoutes() {
-  router.post('/register', registerValidator, registerController);
+  router.post('/register', registerValidator, register);
 
   return router;
 }
