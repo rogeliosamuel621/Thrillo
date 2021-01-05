@@ -1,3 +1,5 @@
-import authRoutes from './auth.routes';
+// routes
+import AuthRoutes from './auth.routes';
 
-export { authRoutes };
+// eslint-disable-next-line import/prefer-default-export
+export { AuthRoutes };
