@@ -20,6 +20,7 @@
 }
 
 .button {
+  cursor: pointer;
   display: flex;
   background-color: #2f89fc;
   border: none;
@@ -29,6 +30,7 @@
   height: 30px;
   align-items: center;
   justify-content: center;
+  padding: 5px 10px;
 }
 
 .container-board {
