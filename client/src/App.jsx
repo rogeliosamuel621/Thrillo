@@ -1,16 +1,16 @@
 import React from 'react';
 import './styles/app.css';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import { Register } from './components/pages';
+import { ContainerRouter } from './routes';
+import { Nav } from './components/molecules';
+
+
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={Register} />
-      </Switch>
-    </BrowserRouter>
+   <ContainerRouter>
+     <Nav />
+   </ContainerRouter>
   );
 };
 
