@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import routes from "./routes"
 
-const SwitchRouter = () => (
+const SwitchRouter = ({routes}) => (
     <Switch>
         {
             routes.map((route, index) => (
@@ -20,7 +20,7 @@ const SwitchRouter = () => (
 const ContainerRouter = ({ children }) => (
     <BrowserRouter>
         {children}
-        <SwitchRouter />
+        <SwitchRouter routes={routes} />
     </BrowserRouter>
 )
 
