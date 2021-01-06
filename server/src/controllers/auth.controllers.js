@@ -36,3 +36,5 @@ export const register = async (req, res, next) => {
     return next(new ErrorHandler(500, 'INTERNAL SERVER ERROR', err));
   }
 };
+
+export default { register };
