@@ -1,9 +1,10 @@
+/* eslint-disable consistent-return */
 import argon from 'argon2';
 import { validationResult } from 'express-validator';
-import { ErrorHandler } from '../middleware/';
+import { ErrorHandler } from '../middleware';
 import User from '../models/User';
 
-const registerController = async (req, res, next) => {
+export const register = async (req, res, next) => {
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
@@ -15,7 +16,6 @@ const registerController = async (req, res, next) => {
   try {
     const hashedPassword = await argon.hash(req.body.password);
     delete req.body.password;
-    console.log(req.body.password);
 
     const user = new User({
       email,
@@ -37,4 +37,4 @@ const registerController = async (req, res, next) => {
   }
 };
 
-export { registerController };
+export default { register };
