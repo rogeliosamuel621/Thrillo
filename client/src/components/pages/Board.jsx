@@ -6,6 +6,7 @@ import AddIcon from '../../assets/img/add.svg';
 const Board = () => {
   return (
     <>
+      <Nav />
       <div className="container">
         <div className="header flex">
           <p>All board</p>

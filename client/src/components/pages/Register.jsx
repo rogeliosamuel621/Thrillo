@@ -5,6 +5,7 @@ import { Nav } from '../molecules/';
 const Register = () => {
   return (
     <>
+      <Nav />
     </>
   );
 };
