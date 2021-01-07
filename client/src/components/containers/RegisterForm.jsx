@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../../styles/containers/registerForm.css';
 
 import { Input } from '../atoms/';
 
 const RegisterForm = () => {
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   return (
     <div className="RegisterForm-container">
       <div className="RegisterForm">
@@ -14,16 +17,22 @@ const RegisterForm = () => {
         <form className="RegisterForm-form">
           <div className="RegisterForm-form-inputContainer">
             <Input
+              placeHolder="Username"
+              setValue={setUsername}
+              type="text"
+              value={username}
+            />
+            <Input
               placeHolder="Email"
-              setValue={(e) => console.log(e)}
+              setValue={setEmail}
               type="email"
-              value={(e) => console.log(e)}
+              value={email}
             />
             <Input
               placeHolder="Password"
-              setValue={(e) => console.log(e)}
+              setValue={setPassword}
               type="password"
-              value={(e) => console.log(e)}
+              value={password}
             />
           </div>
           <div className="RegisterForm-form-submit">
