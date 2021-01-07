@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../styles/atoms/input.css';
 
 const Input = ({ setValue, value, placeHolder, type }) => {
   return (
