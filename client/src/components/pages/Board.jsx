@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/pages/board.css';
-import { BoardCard } from '../molecules/';
+import { BoardCard, Nav } from '../molecules/';
 import AddIcon from '../../assets/img/add.svg';
 
 const Board = () => {
