@@ -1,0 +1,20 @@
+.RegisterForm-container {
+  border-radius: 12px;
+  display: grid;
+  justify-content: center;
+  margin-top: 100px;
+}
+.RegisterForm {
+  background-color: white;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  display: grid;
+  padding: 35px 40px;
+  grid-gap: 40px;
+}
+.RegisterForm-header h1 {
+  color: #2f80ed;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+}
