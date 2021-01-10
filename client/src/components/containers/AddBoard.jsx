@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../../styles/containers/addBoard.css';
-import { Input } from '../atoms';
+import { Button, Input } from '../atoms';
+import ButtonAddBoard from './ButtonAddBoard';
 const AddBoard = () => {
   //   const ref = React.useRef();
   const [fileName, setFileName] = useState('');
@@ -15,17 +16,17 @@ const AddBoard = () => {
   }
   return (
     <div className="container-addBoard">
-      <div className="row">
+      <div>
         <img href="#" className="img-board" />
       </div>
-      <div className="row">
+      <div>
         <Input
           value={fileName}
           placeHolder={'Add board title'}
           disabled={true}
         />
       </div>
-      <div className="row">
+      <div>
         <label className="custom-file-upload">
           <input
             type="file"
@@ -36,9 +37,9 @@ const AddBoard = () => {
           Cover image
         </label>
       </div>
-      <div className="row">
-        <button>cancel</button>
-        <button>add</button>
+      <div className="flex-row flex-end">
+        <Button className="margin bg-white"> cancel </Button>
+        <ButtonAddBoard />
       </div>
     </div>
   );
