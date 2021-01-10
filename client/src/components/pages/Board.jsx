@@ -1,26 +1,24 @@
 import React, { useState } from 'react';
 import '../../styles/pages/board.css';
 import { BoardCard, Modal, Nav } from '../molecules/';
-import AddIcon from '../../assets/img/add.svg';
+import { AddBoard } from '../containers';
+import { ButtonAddBoard } from '../containers';
 
 const Board = () => {
-  const [modalActivite, setModalActivite] = useState(false)
+  const [modal, setModal] = useState(false);
   const handleShowModal = () => {
-    setModalActivite(true)
-  }
+    setModal(true);
+  };
   const handleCloseModal = () => {
-    setModalActivite(false)
-  }
+    setModal(false);
+  };
   return (
     <>
       <Nav />
       <div className="container">
         <div className="header flex">
           <p>All board</p>
-          <button className="button" onClick={handleShowModal}>
-            <img src={AddIcon} alt="add icon" width="15px" height="15px" />
-            add
-          </button>
+          <ButtonAddBoard handleOnClick={handleShowModal} />
         </div>
         <div className="container-board">
           <BoardCard />
@@ -29,7 +27,11 @@ const Board = () => {
           <BoardCard />
         </div>
       </div>
-      { modalActivite && <Modal handleCloseModal={handleCloseModal} />}
+      {modal && (
+        <Modal handleCloseModal={handleCloseModal}>
+          <AddBoard />
+        </Modal>
+      )}
     </>
   );
 };
