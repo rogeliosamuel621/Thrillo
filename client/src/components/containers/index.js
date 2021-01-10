@@ -1,3 +1,3 @@
 import RegisterForm from './RegisterForm';
-
-export { RegisterForm };
+import AddBoard from './AddBoard';
+export { RegisterForm, AddBoard };
