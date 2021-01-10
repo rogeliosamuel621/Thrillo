@@ -1,4 +1,4 @@
 import Nav from './Nav';
 import BoardCard from './BoardCard';
-
-export { Nav, BoardCard };
+import Modal from "./Modal"
+export { Nav, BoardCard, Modal};
