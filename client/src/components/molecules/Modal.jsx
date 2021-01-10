@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { Children } from 'react';
 import '../../styles/molecules/modal.css';
 import CloseIcon from '../../assets/img/close.svg';
 import PropTypes from 'prop-types';
-import BoardCard from './BoardCard';
 
-const Modal = ({ handleCloseModal }) => {
+const Modal = ({ handleCloseModal, children }) => {
   return (
     <div className="modal">
       <div className="container-modal">
@@ -17,6 +16,7 @@ const Modal = ({ handleCloseModal }) => {
             height="45px"
           />
         </div>
+        {children}
       </div>
     </div>
   );
