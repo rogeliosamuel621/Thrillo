@@ -3,6 +3,7 @@ import '../../styles/pages/board.css';
 import { BoardCard, Modal, Nav } from '../molecules/';
 import { AddBoard } from '../containers';
 import { ButtonAddBoard } from '../containers';
+import { fakeBoards } from '../../utils/fakeApi';
 
 const Board = () => {
   const [modal, setModal] = useState(false);
@@ -21,10 +22,13 @@ const Board = () => {
           <ButtonAddBoard handleOnClick={handleShowModal} />
         </div>
         <div className="container-board">
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
+          {fakeBoards.map((board) => (
+            <BoardCard
+              img={board.img}
+              teamMates={board.teamMates}
+              title={board.title}
+            />
+          ))}
         </div>
       </div>
       {modal && (

@@ -1,16 +1,15 @@
 import React from 'react';
 import '../../styles/molecules/boardCard.css';
 
-const BoardCard = () => {
+const BoardCard = ({ img, title, teamMates }) => {
   return (
     <div className="item">
-      <img href="#" className="img-board" />
-      <p>Dev challenge</p>
+      <img src={img} width="219px" height="103,41px" />
+      <p>{title}</p>
       <div className="container-collaborators">
         <div className="avatar-collaborators">RS</div>
         <div className="avatar-collaborators">RS</div>
         <div className="avatar-collaborators">RS</div>
-        <p>+ 5 others</p>
       </div>
     </div>
   );
