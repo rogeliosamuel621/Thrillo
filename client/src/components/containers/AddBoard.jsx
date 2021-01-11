@@ -16,8 +16,8 @@ const AddBoard = () => {
   }
   return (
     <div className="container-addBoard">
-      <div>
-        <img src={fileName} />
+      <div className="container-addBoard-img">
+        <img src={fileName ? fileName : null} width="101%" height="100px" />
       </div>
       <div className="container-addBoard-title">
         <input
