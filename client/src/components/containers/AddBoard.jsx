@@ -17,7 +17,7 @@ const AddBoard = () => {
   return (
     <div className="container-addBoard">
       <div className="container-addBoard-img">
-        <img src={fileName ? fileName : null} width="101%" height="100px" />
+        <img src={fileName ? fileName : null} width="101%" height="103.41px" />
       </div>
       <div className="container-addBoard-title">
         <input
@@ -38,7 +38,6 @@ const AddBoard = () => {
         </label>
       </div>
       <div className="flex-row flex-end">
-        <Button className="margin bg-white"> cancel </Button>
         <ButtonAddBoard />
       </div>
     </div>
