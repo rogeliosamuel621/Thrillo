@@ -7,9 +7,11 @@ const BoardCard = ({ img, title, teamMates }) => {
       <img src={img} width="219px" height="103,41px" />
       <p>{title}</p>
       <div className="container-collaborators">
-        <div className="avatar-collaborators">RS</div>
-        <div className="avatar-collaborators">RS</div>
-        <div className="avatar-collaborators">RS</div>
+        {teamMates.map((mate) => (
+          <div className="avatar-collaborators">
+            <img src={mate} alt="mate pic" width="30px" height="30px" />
+          </div>
+        ))}
       </div>
     </div>
   );
