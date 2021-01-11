@@ -3,12 +3,9 @@ import '../../styles/containers/addBoard.css';
 import { Button, Input } from '../atoms';
 import ButtonAddBoard from './ButtonAddBoard';
 const AddBoard = () => {
-  //   const ref = React.useRef();
   const [fileName, setFileName] = useState('');
-  //   function handleFileClear() {
-  //     ref.current.value = '';
-  //     setFileName('');
-  //   }
+  const [title, setTitle] = useState('');
+
   function handleFileSelected(e) {
     const files = Array.from(e.target.files);
     console.log(files);
@@ -21,9 +18,10 @@ const AddBoard = () => {
       </div>
       <div>
         <Input
-          value={fileName}
+          value={title}
           placeHolder={'Add board title'}
-          disabled={true}
+          setValue={setTitle}
+          type="text"
         />
       </div>
       <div>
@@ -31,7 +29,6 @@ const AddBoard = () => {
           <input
             type="file"
             accept=".png,.jpg,.jpeg,.svg"
-            // ref={ref}
             onChange={handleFileSelected}
           />
           Cover image
