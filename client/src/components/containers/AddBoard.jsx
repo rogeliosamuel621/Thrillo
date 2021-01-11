@@ -17,14 +17,14 @@ const AddBoard = () => {
   return (
     <div className="container-addBoard">
       <div>
-        <img src={fileName} className="img-board" />
+        <img src={fileName} />
       </div>
-      <div>
-        <Input
-          value={title}
-          placeHolder={'Add board title'}
-          setValue={setTitle}
+      <div className="container-addBoard-title">
+        <input
           type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Add board title"
         />
       </div>
       <div>
