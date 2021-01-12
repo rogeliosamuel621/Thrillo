@@ -1,9 +1,8 @@
 class ErrorHandler extends Error {
-  constructor(statusCode, messages, err) {
+  constructor(statusCode, messages) {
     super();
     this.statusCode = statusCode;
     this.message = messages;
-    this.error = err;
   }
 }
 
