@@ -18,7 +18,7 @@ database();
 app.use(express.json());
 
 // routing
-app.use('/api/auth', UserRoutes());
+app.use('/api/users', UserRoutes());
 
 // midlewares output
 app.use(handleError);
