@@ -1,9 +1,9 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import database from './config/database';
-import { handlerErrors } from './middleware';
+import { handleError } from './middlewares';
 
-import { AuthRoutes } from './routes';
+import { UserRoutes } from './routes';
 
 // load env variables
 dotenv.config();
@@ -18,9 +18,9 @@ database();
 app.use(express.json());
 
 // routing
-app.use('/api/auth', AuthRoutes());
+app.use('/api/auth', UserRoutes());
 
 // midlewares output
-app.use(handlerErrors);
+app.use(handleError);
 
 export default app;
