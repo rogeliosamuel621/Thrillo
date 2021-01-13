@@ -4,7 +4,7 @@ import ButtonAddBoard from './ButtonAddBoard';
 import CloseIcon from '../../assets/img/close.svg';
 
 const AddBoard = ({ handleCloseModal }) => {
-  const [fileName, setFileName] = useState('');
+  const [imagePreview, setImagePreview] = useState('');
   const [title, setTitle] = useState('');
 
   function handleFileSelected(e) {
@@ -12,7 +12,7 @@ const AddBoard = ({ handleCloseModal }) => {
     reader.readAsDataURL(e.target.files[0]);
 
     reader.onload = () => {
-      setFileName(reader.result);
+      setImagePreview(reader.result);
     };
   }
   return (
@@ -30,7 +30,7 @@ const AddBoard = ({ handleCloseModal }) => {
         <div className="container-addBoard">
           <div className="container-addBoard-img">
             <img
-              src={fileName ? fileName : null}
+              src={imagePreview ? imagePreview : null}
               width="101%"
               height="103.41px"
             />
