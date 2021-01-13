@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../styles/pages/board.css';
-import { BoardCard, Modal, Nav } from '../molecules/';
+import { BoardCard, Nav } from '../molecules/';
 import { AddBoard } from '../containers';
 import { ButtonAddBoard } from '../containers';
 import { fakeBoards } from '../../utils/fakeApi';
@@ -31,11 +31,7 @@ const Board = () => {
           ))}
         </div>
       </div>
-      {modal && (
-        <Modal handleCloseModal={handleCloseModal}>
-          <AddBoard />
-        </Modal>
-      )}
+      {modal && <AddBoard handleCloseModal={handleCloseModal} />}
     </>
   );
 };

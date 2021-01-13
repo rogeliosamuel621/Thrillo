@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import '../../styles/containers/addBoard.css';
-import { Button, Input } from '../atoms';
 import ButtonAddBoard from './ButtonAddBoard';
-const AddBoard = () => {
+import CloseIcon from '../../assets/img/close.svg';
+
+const AddBoard = ({ handleCloseModal }) => {
   const [fileName, setFileName] = useState('');
   const [title, setTitle] = useState('');
 
@@ -15,30 +16,47 @@ const AddBoard = () => {
     };
   }
   return (
-    <div className="container-addBoard">
-      <div className="container-addBoard-img">
-        <img src={fileName ? fileName : null} width="101%" height="103.41px" />
-      </div>
-      <div className="container-addBoard-title">
-        <input
-          type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder="Add board title"
-        />
-      </div>
-      <div>
-        <label className="custom-file-upload">
-          <input
-            type="file"
-            accept=".png,.jpg,.jpeg,.svg"
-            onChange={handleFileSelected}
+    <div className="modal">
+      <div className="container-modal">
+        <div className="butoon-close">
+          <img
+            onClick={() => handleCloseModal()}
+            src={CloseIcon}
+            alt="close icon"
+            width="45px"
+            height="45px"
           />
-          Cover image
-        </label>
-      </div>
-      <div className="flex-row flex-end">
-        <ButtonAddBoard />
+        </div>
+        <div className="container-addBoard">
+          <div className="container-addBoard-img">
+            <img
+              src={fileName ? fileName : null}
+              width="101%"
+              height="103.41px"
+            />
+          </div>
+          <div className="container-addBoard-title">
+            <input
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="Add board title"
+            />
+          </div>
+          <div>
+            <label className="custom-file-upload">
+              <input
+                type="file"
+                accept=".png,.jpg,.jpeg,.svg"
+                onChange={handleFileSelected}
+              />
+              Cover image
+            </label>
+          </div>
+          <div className="flex-row flex-end">
+            <ButtonAddBoard />
+          </div>
+        </div>
       </div>
     </div>
   );
