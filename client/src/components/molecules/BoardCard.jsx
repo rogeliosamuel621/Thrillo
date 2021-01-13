@@ -1,16 +1,17 @@
 import React from 'react';
 import '../../styles/molecules/boardCard.css';
 
-const BoardCard = () => {
+const BoardCard = ({ img, title, teamMates }) => {
   return (
     <div className="item">
-      <img href="#" className="img-board" />
-      <p>Dev challenge</p>
+      <img src={img} width="219px" height="103,41px" />
+      <p>{title}</p>
       <div className="container-collaborators">
-        <div className="avatar-collaborators">RS</div>
-        <div className="avatar-collaborators">RS</div>
-        <div className="avatar-collaborators">RS</div>
-        <p>+ 5 others</p>
+        {teamMates.map((mate, index) => (
+          <div className="avatar-collaborators" key={index}>
+            <img src={mate} alt="mate pic" width="30px" height="30px" />
+          </div>
+        ))}
       </div>
     </div>
   );

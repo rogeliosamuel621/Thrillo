@@ -1,27 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../styles/pages/board.css';
 import { BoardCard, Nav } from '../molecules/';
-import AddIcon from '../../assets/img/add.svg';
+import { AddBoard } from '../containers';
+import { ButtonAddBoard } from '../containers';
+import { fakeBoards } from '../../utils/fakeApi';
 
 const Board = () => {
+  const [modal, setModal] = useState(false);
   return (
     <>
       <Nav />
       <div className="container">
         <div className="header flex">
           <p>All board</p>
-          <button className="button">
-            <img src={AddIcon} alt="add icon" width="15px" height="15px" />
-            add
-          </button>
+          <ButtonAddBoard handleOnClick={() => setModal(!modal)} />
         </div>
         <div className="container-board">
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
-          <BoardCard />
+          {fakeBoards.map((board) => (
+            <BoardCard
+              key={board.ID}
+              img={board.img}
+              teamMates={board.teamMates}
+              title={board.title}
+            />
+          ))}
         </div>
       </div>
+      {modal && <AddBoard handleCloseModal={() => setModal(!modal)} />}
     </>
   );
 };
