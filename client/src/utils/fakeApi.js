@@ -1,5 +1,6 @@
 export const fakeBoards = [
   {
+    ID: 0,
     img:
       'https://res.cloudinary.com/dnvp4s8pe/image/upload/v1608400402/My%20Website/AuthApp_ivdwwq.png',
     title: 'Dev challenges',
@@ -10,6 +11,7 @@ export const fakeBoards = [
     ],
   },
   {
+    ID: 1,
     img:
       'https://res.cloudinary.com/dnvp4s8pe/image/upload/v1608400402/My%20Website/AuthApp_ivdwwq.png',
     title: 'Dev challenges',
@@ -20,6 +22,7 @@ export const fakeBoards = [
     ],
   },
   {
+    ID: 2,
     img:
       'https://res.cloudinary.com/dnvp4s8pe/image/upload/v1608400402/My%20Website/AuthApp_ivdwwq.png',
     title: 'Dev challenges',
@@ -30,6 +33,7 @@ export const fakeBoards = [
     ],
   },
   {
+    ID: 3,
     img:
       'https://res.cloudinary.com/dnvp4s8pe/image/upload/v1608400402/My%20Website/AuthApp_ivdwwq.png',
     title: 'Auth App',

@@ -18,6 +18,7 @@ const Board = () => {
         <div className="container-board">
           {fakeBoards.map((board) => (
             <BoardCard
+              key={board.ID}
               img={board.img}
               teamMates={board.teamMates}
               title={board.title}
