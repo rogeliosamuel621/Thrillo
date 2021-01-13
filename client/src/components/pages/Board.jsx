@@ -7,19 +7,13 @@ import { fakeBoards } from '../../utils/fakeApi';
 
 const Board = () => {
   const [modal, setModal] = useState(false);
-  const handleShowModal = () => {
-    setModal(true);
-  };
-  const handleCloseModal = () => {
-    setModal(false);
-  };
   return (
     <>
       <Nav />
       <div className="container">
         <div className="header flex">
           <p>All board</p>
-          <ButtonAddBoard handleOnClick={handleShowModal} />
+          <ButtonAddBoard handleOnClick={() => setModal(!modal)} />
         </div>
         <div className="container-board">
           {fakeBoards.map((board) => (
@@ -31,7 +25,7 @@ const Board = () => {
           ))}
         </div>
       </div>
-      {modal && <AddBoard handleCloseModal={handleCloseModal} />}
+      {modal && <AddBoard handleCloseModal={() => setModal(!modal)} />}
     </>
   );
 };
