@@ -2,7 +2,7 @@
   border-radius: 12px;
   display: grid;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 .RegisterForm {
   background-color: white;
@@ -13,6 +13,7 @@
   grid-gap: 40px;
 }
 .RegisterForm-header h1 {
+  text-align: center;
   color: #2f80ed;
   font-size: 36px;
   font-weight: 700;
