@@ -1,9 +1,13 @@
 import React from 'react';
 
+import { Nav } from '../molecules/';
+import { LoginForm } from '../containers/';
+
 const Login = () => {
   return (
     <>
-      <h1>Login</h1>
+      <Nav />
+      <LoginForm />
     </>
   );
 };
