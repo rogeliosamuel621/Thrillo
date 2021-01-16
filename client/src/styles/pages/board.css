@@ -1,0 +1,25 @@
+.container-board{
+    margin: 30px;
+}
+.header-board{
+    display: flex;
+    margin-top: 1.2em;
+    justify-content: space-between;
+    align-items: center;
+}
+.collaborators{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.avatar{
+    padding: 3px;
+    cursor: pointer;
+}
+.show-menu{
+    background-color: #DDDDDD;
+}
+.point-container{
+    display: inline;
+    margin-right: 1em;
+}
