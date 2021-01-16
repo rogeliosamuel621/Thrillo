@@ -53,3 +53,34 @@ export const collaborators = [
   'https://res.cloudinary.com/dnvp4s8pe/image/upload/v1608145205/My%20Website/myLogo_hc28py.svg',
   'https://res.cloudinary.com/dnvp4s8pe/image/upload/v1608145205/My%20Website/myLogo_hc28py.svg',
 ]
+export const board = [
+  {
+    title:"todo",
+    tasks:[
+      "task 1",
+      "task 2",
+      "task 3",
+    ]
+  },
+  {
+    title:"Doign",
+    tasks:[
+      "task 1",
+    ]
+  },
+  {
+    title:"Testing",
+    tasks:[
+      "task 1",
+      "task 2",
+    ]
+  },
+  {
+    title:"Completed",
+    tasks:[
+      "task 1",
+      "task 2",
+      "task 3",
+    ]
+  },
+]
