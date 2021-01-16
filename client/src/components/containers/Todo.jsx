@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "../../styles/containers/todo.css"
 const SectionColumns = () => {
   const CardTask = () => <div className="card-task">task test</div>;
   const Column = () => (
