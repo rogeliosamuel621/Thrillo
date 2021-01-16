@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../styles/pages/board.css';
+import '../../styles/pages/boards.css';
 import { BoardCard, Nav } from '../molecules/';
 import { AddBoard } from '../containers';
 import { ButtonAddBoard } from '../containers';
