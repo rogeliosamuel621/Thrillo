@@ -3,17 +3,20 @@ import { Nav } from '../molecules';
 import PointIcon from '../../assets/img/point.svg';
 import { collaborators } from '../../utils/fakeApi';
 import { Todo } from '../containers';
-
+import '../../styles/pages/board.css';
+import { Button } from '../atoms';
 const Header = () => {
   const Collaborators = () => (
     <div className="collaborators">
       {collaborators.map((mate, index) => (
-        <img key={index} src={mate} alt="mate pic" width="30px" height="30px" />
+        <div className="avatar" key={index}>
+          <img src={mate} alt="mate pic" width="30px" height="30px" />
+        </div>
       ))}
     </div>
   );
   const Point = () => (
-    <img src={PointIcon} alt="add icon" width="15px" height="15px" />
+    <img src={PointIcon} alt="add icon" width="10px" height="10px" />
   );
   const ThreePointsIcon = () => (
     <div className="point-container">
@@ -23,10 +26,10 @@ const Header = () => {
     </div>
   );
   const ButtonShowMenu = () => (
-    <button>
+    <Button className="show-menu">
       <ThreePointsIcon />
       show menu
-    </button>
+    </Button>
   );
   return (
     <div className="header-board">
@@ -39,8 +42,10 @@ const Board = React.memo(() => {
   return (
     <>
       <Nav />
-      <Header />
-      <Todo />
+      <div className="container-board">
+        <Header />
+        <Todo />
+      </div>
     </>
   );
 });
