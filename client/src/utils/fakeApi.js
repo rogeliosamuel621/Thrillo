@@ -44,3 +44,9 @@ export const fakeBoards = [
     ],
   },
 ];
+
+export const collaborators = [
+  'https://res.cloudinary.com/dnvp4s8pe/image/upload/v1608145205/My%20Website/myLogo_hc28py.svg',
+  'https://res.cloudinary.com/dnvp4s8pe/image/upload/v1608145205/My%20Website/myLogo_hc28py.svg',
+  'https://res.cloudinary.com/dnvp4s8pe/image/upload/v1608145205/My%20Website/myLogo_hc28py.svg',
+]
