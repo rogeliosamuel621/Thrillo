@@ -15,7 +15,7 @@ const Board = () => {
           <p>All board</p>
           <ButtonAddBoard handleOnClick={() => setModal(!modal)} />
         </div>
-        <div className="container-board">
+        <div className="container-boards">
           {fakeBoards.map((board) => (
             <BoardCard
               key={board.ID}
