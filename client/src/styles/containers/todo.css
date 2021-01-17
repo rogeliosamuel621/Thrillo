@@ -27,26 +27,15 @@
   overflow-x: hidden;
   overflow-y: auto;
 }
-
-.card-task {
-  display: flex;
-  background-color: #ffffff;
-  width: 243px;
-  height: 148px;
-  border-radius: 12px;
-  justify-content: center;
-  align-items: center;
-}
-
 .taks::-webkit-scrollbar,
 .container-columns::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 
-.taks::-webkit-scrollbar-thumb ,
+.taks::-webkit-scrollbar-thumb,
 .container-columns::-webkit-scrollbar-thumb {
-  border-radius: .5em;
+  border-radius: 0.5em;
   background-color: #bbbbbb;
 }
 
