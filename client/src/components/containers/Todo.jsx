@@ -1,20 +1,11 @@
 import React from 'react';
 import '../../styles/containers/todo.css';
 import { board } from '../../utils/fakeApi';
-import { Button, CardTask } from '../atoms';
+import { Button } from '../atoms';
+import { Column } from './';
 import AddBlueIcon from '../../assets/img/addBlue.svg';
 
 const SectionColumns = () => {
-  const Column = ({ title, tasks }) => (
-    <div className="column">
-      <label>{title}</label>
-      <div className="taks">
-        {tasks.map((task, index) => (
-          <CardTask key={index} task={task} />
-        ))}
-      </div>
-    </div>
-  );
   return (
     <div className="container-columns">
       {board.map((column, index) => (
