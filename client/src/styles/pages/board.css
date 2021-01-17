@@ -1,4 +1,6 @@
 .container-board{
+    display: grid;
+    grid-row-gap: 5%;
     margin: 30px;
 }
 .header-board{
