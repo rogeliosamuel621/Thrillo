@@ -1,34 +1,57 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Nav } from '../molecules';
+import PointIcon from '../../assets/img/point.svg';
+import AddIcon from '../../assets/img/add.svg';
+import { collaborators } from '../../utils/fakeApi';
+import { Todo } from '../containers';
 import '../../styles/pages/board.css';
-import { BoardCard, Nav } from '../molecules/';
-import { AddBoard } from '../containers';
-import { ButtonAddBoard } from '../containers';
-import { fakeBoards } from '../../utils/fakeApi';
-
-const Board = () => {
-  const [modal, setModal] = useState(false);
+import { Button } from '../atoms';
+const Header = () => {
+  const Collaborators = () => (
+    <div className="collaborators">
+      {collaborators.map((mate, index) => (
+        <div className="avatar" key={index}>
+          <img src={mate} alt="mate pic" width="30px" height="30px" />
+        </div>
+      ))}
+      <div className="button-add-collaboarators">
+        <img src={AddIcon} alt="add icon" width="18px" height="18px" />
+      </div>
+    </div>
+  );
+  const Point = () => (
+    <img src={PointIcon} alt="add icon" width="10px" height="10px" />
+  );
+  const ThreePointsIcon = () => (
+    <div className="point-container">
+      <Point />
+      <Point />
+      <Point />
+    </div>
+  );
+  const ButtonShowMenu = () => (
+    <Button className="show-menu">
+      <ThreePointsIcon />
+      show menu
+    </Button>
+  );
+  return (
+    <div className="header-board">
+      <Collaborators />
+      <ButtonShowMenu />
+    </div>
+  );
+};
+const Board = React.memo(() => {
   return (
     <>
       <Nav />
-      <div className="container">
-        <div className="header flex">
-          <p>All board</p>
-          <ButtonAddBoard handleOnClick={() => setModal(!modal)} />
-        </div>
-        <div className="container-board">
-          {fakeBoards.map((board) => (
-            <BoardCard
-              key={board.ID}
-              img={board.img}
-              teamMates={board.teamMates}
-              title={board.title}
-            />
-          ))}
-        </div>
+      <div className="container-board">
+        <Header />
+        <Todo />
       </div>
-      {modal && <AddBoard handleCloseModal={() => setModal(!modal)} />}
     </>
   );
-};
+});
 
 export default Board;

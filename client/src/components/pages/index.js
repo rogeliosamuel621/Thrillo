@@ -1,5 +1,6 @@
 import Register from './Register';
-import Board from './Board';
 import Login from './Login';
+import Boards from './Boards';
+import Board from './Board';
 
-export { Register, Board, Login };
+export { Register, Login, Boards, Board };
