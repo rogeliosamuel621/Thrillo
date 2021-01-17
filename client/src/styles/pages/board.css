@@ -15,8 +15,12 @@
     align-items: center;
 }
 .avatar{
-    padding: 3px;
+    display: flex;
+    margin:3px;
     cursor: pointer;
+    background-color: aqua;
+    justify-content: center;
+    align-items: center;
 }
 .show-menu{
     background-color: #DDDDDD;
@@ -24,4 +28,16 @@
 .point-container{
     display: inline;
     margin-right: 1em;
+}
+.button-add-collaboarators{
+    display: flex;
+    background-color: #2F80ED;
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    margin: 3px;
+    margin-left: 1.5em;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
