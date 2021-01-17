@@ -86,4 +86,52 @@ export const board = [
       "task 3",
     ]
   },
+  {
+    title:"Doign",
+    tasks:[
+      "task 1",
+    ]
+  },
+  {
+    title:"Testing",
+    tasks:[
+      "task 1",
+      "task 2",
+    ]
+  },
+  {
+    title:"Completed",
+    tasks:[
+      "task 1",
+      "task 2",
+      "task 3",
+    ]
+  },
+  {
+    title:"Doign",
+    tasks:[
+      "task 1",
+    ]
+  },
+  {
+    title:"Testing",
+    tasks:[
+      "task 1",
+      "task 2",
+    ]
+  },
+  {
+    title:"Completed",
+    tasks:[
+      "task 1",
+      "task 2",
+      "task 3",
+      "task 1",
+      "task 2",
+      "task 3",
+      "task 1",
+      "task 2",
+      "task 3",
+    ]
+  },
 ]
