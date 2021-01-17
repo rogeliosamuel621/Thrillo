@@ -1,0 +1,53 @@
+.container-todo {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-gap: 2%;
+}
+.container-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(243px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(225px, 1fr));
+  height: 73vh;
+  grid-gap: 2%;
+}
+.column {
+  display: grid;
+  grid-template-rows: 1fr 11fr;
+  height: 73vh;
+  justify-content: center;
+}
+.taks {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fill, minmax(148px, 1fr));
+  grid-gap: 2%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.card-task {
+  display: flex;
+  background-color: #ffffff;
+  width: 243px;
+  height: 148px;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.taks::-webkit-scrollbar {
+  width: 10px;
+}
+
+.taks::-webkit-scrollbar-thumb {
+  border-radius: 14px;
+  background-color: #b3b6b7;
+}
+
+.button-add-list {
+  display: flex;
+  background-color: #dae4fd;
+  color: #2f80ed;
+  height: 37px;
+  justify-content: space-between;
+}
