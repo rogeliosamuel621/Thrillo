@@ -1,24 +1,36 @@
 import React from 'react';
-import "../../styles/containers/todo.css"
+import '../../styles/containers/todo.css';
+import { board } from '../../utils/fakeApi';
+import { Button } from '../atoms';
+import AddBlueIcon from '../../assets/img/addBlue.svg';
+
 const SectionColumns = () => {
-  const CardTask = () => <div className="card-task">task test</div>;
-  const Column = () => (
+  const CardTask = ({ task }) => <div className="card-task">{task}</div>;
+  const Column = ({ title, tasks }) => (
     <div className="column">
-      <CardTask />
+      <label>{title}</label>
+      <div className="taks">
+        {tasks.map((task, index) => (
+          <CardTask key={index} task={task} />
+        ))}
+      </div>
     </div>
   );
   return (
     <div className="container-columns">
-      <Column />
-      <Column />
-      <Column />
+      {board.map((column, index) => (
+        <Column key={index} {...column} />
+      ))}
     </div>
   );
 };
 const SectionAddColumns = () => (
-  <div className="container-add-columns">
-    <button>Add another list</button>
-  </div>
+  <>
+    <Button className="button-add-list">
+      Add another list
+      <img src={AddBlueIcon} alt="close icon" width="15px" height="15px"/>
+    </Button>
+  </>
 );
 
 const Todo = () => {
