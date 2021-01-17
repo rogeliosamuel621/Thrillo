@@ -1,6 +1,7 @@
 import React from 'react';
 import { Nav } from '../molecules';
 import PointIcon from '../../assets/img/point.svg';
+import AddIcon from '../../assets/img/add.svg';
 import { collaborators } from '../../utils/fakeApi';
 import { Todo } from '../containers';
 import '../../styles/pages/board.css';
@@ -13,6 +14,9 @@ const Header = () => {
           <img src={mate} alt="mate pic" width="30px" height="30px" />
         </div>
       ))}
+      <div className="button-add-collaboarators">
+        <img src={AddIcon} alt="add icon" width="18px" height="18px" />
+      </div>
     </div>
   );
   const Point = () => (
