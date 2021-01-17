@@ -3,6 +3,7 @@
     grid-row-gap: 5%;
     margin: 30px;
 }
+.container-header-board{ position: relative;}
 .header-board{
     display: flex;
     margin-top: 1.2em;
