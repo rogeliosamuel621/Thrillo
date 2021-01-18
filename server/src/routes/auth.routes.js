@@ -19,6 +19,8 @@ function AuthRoutes() {
     AuthController.authenticate
   );
 
+  router.get('/refresh', AuthController.refresh);
+
   return router;
 }
 
