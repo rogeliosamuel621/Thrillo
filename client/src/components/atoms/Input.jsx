@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { Children } from 'react';
 import '../../styles/atoms/input.css';
 
-const Input = ({ setValue, value, placeHolder, type, disabled = false }) => {
+const Input = ({
+  classNameContainer,
+  setValue,
+  value,
+  placeHolder,
+  type,
+  children,
+  disabled = false,
+}) => {
   return (
-    <div className="EditInputText-Container">
+    <div className={`EditInputText-Container ${classNameContainer}`}>
       <input
         type={type}
         onChange={(e) => setValue(e.target.value)}
@@ -12,6 +20,7 @@ const Input = ({ setValue, value, placeHolder, type, disabled = false }) => {
         disabled={disabled}
         required
       />
+      {children}
     </div>
   );
 };

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Nav } from '../molecules';
+import React, { useState } from 'react';
+import { InviteBoardCard, Nav } from '../molecules';
 import PointIcon from '../../assets/img/point.svg';
 import AddIcon from '../../assets/img/add.svg';
 import { collaborators } from '../../utils/fakeApi';
@@ -7,6 +7,7 @@ import { Todo } from '../containers';
 import '../../styles/pages/board.css';
 import { Button } from '../atoms';
 const Header = () => {
+  const [modal, setModal] = useState(false);
   const Collaborators = () => (
     <div className="collaborators">
       {collaborators.map((mate, index) => (
@@ -14,7 +15,7 @@ const Header = () => {
           <img src={mate} alt="mate pic" width="30px" height="30px" />
         </div>
       ))}
-      <div className="button-add-collaboarators">
+      <div className="button-add-collaboarators" onClick={() => setModal(!modal)}>
         <img src={AddIcon} alt="add icon" width="18px" height="18px" />
       </div>
     </div>
@@ -30,15 +31,18 @@ const Header = () => {
     </div>
   );
   const ButtonShowMenu = () => (
-    <Button className="show-menu">
+    <Button className="show-menu" >
       <ThreePointsIcon />
       show menu
     </Button>
   );
   return (
-    <div className="header-board">
-      <Collaborators />
-      <ButtonShowMenu />
+    <div className="container-header-board">
+      <div className="header-board">
+        <Collaborators />
+        <ButtonShowMenu />
+      </div>
+      {modal && <InviteBoardCard handleCloseModal={() => setModal(!modal)} />}
     </div>
   );
 };
