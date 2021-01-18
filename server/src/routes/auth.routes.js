@@ -10,7 +10,7 @@ const router = Router();
 
 function AuthRoutes() {
   router.post(
-    '/login',
+    '/',
     [
       body('email', 'Insert a valid email').isEmail(),
       body('password', 'Password must have 6 or more characters').isLength({ min: 6 }),

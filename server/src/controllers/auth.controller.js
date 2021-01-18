@@ -5,6 +5,7 @@ import User from '../models/User';
 
 // utils
 import ErrorHandler from '../utils/errorHandler';
+import generateToken from '../utils/generateToken';
 
 export const authenticate = async (req, res, next) => {
   const { email, password } = req.body;
@@ -23,10 +24,13 @@ export const authenticate = async (req, res, next) => {
     }
 
     // generate the token
+    const token = await generateToken({ id: user.id, username: user.username });
 
     // return the response
     return res.status(200).json({
-      message: 'Authenticated successfully'
+      message: 'Authenticated successfully',
+      user: { id: user.id, username: user.username },
+      token
     });
   } catch (error) {
     return next(new ErrorHandler(500, 'Internal server error'));
