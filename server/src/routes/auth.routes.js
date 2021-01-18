@@ -3,6 +3,7 @@ import { body } from 'express-validator';
 
 // middlewares
 import handleBody from '../middlewares/handleBody';
+import handleToken from '../middlewares/handleToken';
 // controllers
 import { AuthController } from '../controllers';
 
@@ -19,7 +20,7 @@ function AuthRoutes() {
     AuthController.authenticate
   );
 
-  router.get('/refresh', AuthController.refresh);
+  router.get('/refresh', handleToken, AuthController.refresh);
 
   return router;
 }
