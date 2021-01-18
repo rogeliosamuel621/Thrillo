@@ -3,6 +3,7 @@ import ErrorHandler from '../utils/errorHandler';
 
 // models
 import User from '../models/User';
+import generateToken from '../utils/generateToken';
 
 export const create = async (req, res, next) => {
   const { email, username, password } = req.body;
@@ -23,11 +24,14 @@ export const create = async (req, res, next) => {
     // save in database
     await user.save();
 
+    // generate token
+    const token = await generateToken({ id: user.id, username: user.username });
+
     // return the response
     return res.status(200).json({
       message: 'You registered successfully',
-      user: null
-      // TODO: Return the token instead
+      user: { id: user.id, username: user.username },
+      token
     });
   } catch (error) {
     return next(new ErrorHandler(500, 'Internal server error'));
