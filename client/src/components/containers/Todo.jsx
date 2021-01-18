@@ -2,20 +2,10 @@ import React from 'react';
 import '../../styles/containers/todo.css';
 import { board } from '../../utils/fakeApi';
 import { Button } from '../atoms';
+import { Column } from './';
 import AddBlueIcon from '../../assets/img/addBlue.svg';
 
 const SectionColumns = () => {
-  const CardTask = ({ task }) => <div className="card-task">{task}</div>;
-  const Column = ({ title, tasks }) => (
-    <div className="column">
-      <label>{title}</label>
-      <div className="taks">
-        {tasks.map((task, index) => (
-          <CardTask key={index} task={task} />
-        ))}
-      </div>
-    </div>
-  );
   return (
     <div className="container-columns">
       {board.map((column, index) => (
@@ -28,7 +18,7 @@ const SectionAddColumns = () => (
   <>
     <Button className="button-add-list">
       Add another list
-      <img src={AddBlueIcon} alt="close icon" width="15px" height="15px"/>
+      <img src={AddBlueIcon} alt="close icon" width="15px" height="15px" />
     </Button>
   </>
 );

@@ -1,0 +1,12 @@
+.CardTask {
+  display: flex;
+  background-color: #ffffff;
+  height: 45px;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.CardTask p {
+  margin: 0;
+}
