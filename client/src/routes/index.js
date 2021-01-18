@@ -1,3 +1,3 @@
-import ContainerRouter from "./ContainerRouter"
+import ContainerRouter from './ContainerRouter';
 
-export { ContainerRouter }
+export { ContainerRouter };

@@ -1,4 +1,4 @@
-import { Register, Login,Boards, Board, About } from '../components/pages';
+import { Register, Login, Boards, Board, About } from '../components/pages';
 
 const routes = [
   {

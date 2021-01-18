@@ -4,23 +4,22 @@ import { body } from 'express-validator';
 // middlewares
 import handleBody from '../middlewares/handleBody';
 // controllers
-import { UserController } from '../controllers';
+import { AuthController } from '../controllers';
 
 const router = Router();
 
-function UserRoutes() {
+function AuthRoutes() {
   router.post(
-    '/register',
+    '/login',
     [
-      body('username', 'Username is required').notEmpty(),
       body('email', 'Insert a valid email').isEmail(),
       body('password', 'Password must have 6 or more characters').isLength({ min: 6 }),
       handleBody
     ],
-    UserController.create
+    AuthController.authenticate
   );
 
   return router;
 }
 
-export default UserRoutes;
+export default AuthRoutes;
