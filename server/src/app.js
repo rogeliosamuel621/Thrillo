@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import database from './config/database';
 import { handleError } from './middlewares';
 
@@ -15,6 +16,7 @@ const app = express();
 database();
 
 // middlewares input
+app.use(cors());
 app.use(express.json());
 
 // routing
