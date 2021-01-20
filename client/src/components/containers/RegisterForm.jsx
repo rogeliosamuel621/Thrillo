@@ -6,6 +6,7 @@ import AxiosInstance from '../../utils/axios';
 import { Input } from '../atoms/';
 
 const RegisterForm = () => {
+  console.log(process.env.API_URI);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
