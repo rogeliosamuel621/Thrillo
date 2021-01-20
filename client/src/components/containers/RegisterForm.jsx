@@ -18,7 +18,6 @@ const RegisterForm = () => {
     AxiosInstance.post('/users/register', data)
       .then((res) => console.log(res))
       .catch((err) => {
-        console.log(err);
         if (err.message === 'Request failed with status code 400') {
           alert('That email is already taken');
           return;
