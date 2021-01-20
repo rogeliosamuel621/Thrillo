@@ -17,7 +17,15 @@ const RegisterForm = () => {
 
     axios
       .post('http://localhost:3000/api/users/register', data)
-      .then((res) => console.log(res));
+      .then((res) => console.log(res))
+      .catch((err) => {
+        console.log(err.message);
+        if (err.message === 'Request failed with status code 400') {
+          alert('That email is already taken');
+          return;
+        }
+        alert('something wrong occurred');
+      });
   }
 
   return (
