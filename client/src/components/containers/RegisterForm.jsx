@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../../styles/containers/registerForm.css';
-import axios from 'axios';
+import AxiosInstance from '../../utils/axios';
 
 import { Input } from '../atoms/';
 
@@ -15,11 +15,10 @@ const RegisterForm = () => {
 
     const data = { username, email, password };
 
-    axios
-      .post('http://localhost:3000/api/users/register', data)
+    AxiosInstance.post('/users/register', data)
       .then((res) => console.log(res))
       .catch((err) => {
-        console.log(err.message);
+        console.log(err);
         if (err.message === 'Request failed with status code 400') {
           alert('That email is already taken');
           return;
