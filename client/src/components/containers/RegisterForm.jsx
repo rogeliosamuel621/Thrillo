@@ -14,10 +14,20 @@ const RegisterForm = () => {
   function register(e) {
     e.preventDefault();
 
+    if (password.length < 6) {
+      alert('Password must have at least 6 characters');
+      return;
+    }
+
     const data = { username, email, password };
 
     AxiosInstance.post('/users/register', data)
-      .then((res) => console.log(res))
+      .then((res) => {
+        if (res.status === 200) {
+          localStorage.setItem('token', res.data.token);
+          window.location.href = '/boards';
+        }
+      })
       .catch((err) => {
         if (err.message === 'Request failed with status code 400') {
           alert('That email is already taken');
