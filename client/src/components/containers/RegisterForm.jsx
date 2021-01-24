@@ -1,23 +1,33 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import '../../styles/containers/registerForm.css';
 import AxiosInstance from '../../utils/axios';
 
 import { Input } from '../atoms/';
 
 const RegisterForm = () => {
-  console.log(process.env.API_URI);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const history = useHistory();
 
   function register(e) {
     e.preventDefault();
 
+    if (password.length < 6) {
+      alert('Password must have at least 6 characters');
+      return;
+    }
+
     const data = { username, email, password };
 
     AxiosInstance.post('/users/register', data)
-      .then((res) => console.log(res))
+      .then((res) => {
+        if (res.status === 200) {
+          localStorage.setItem('token', res.data.token);
+          history.push('/boards');
+        }
+      })
       .catch((err) => {
         if (err.message === 'Request failed with status code 400') {
           alert('That email is already taken');
