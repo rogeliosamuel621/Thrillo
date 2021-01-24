@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import '../../styles/containers/registerForm.css';
 import AxiosInstance from '../../utils/axios';
 
 import { Input } from '../atoms/';
 
 const RegisterForm = () => {
-  console.log(process.env.API_URI);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const history = useHistory();
 
   function register(e) {
     e.preventDefault();
@@ -25,7 +25,7 @@ const RegisterForm = () => {
       .then((res) => {
         if (res.status === 200) {
           localStorage.setItem('token', res.data.token);
-          window.location.href = '/boards';
+          history.push('/boards');
         }
       })
       .catch((err) => {
