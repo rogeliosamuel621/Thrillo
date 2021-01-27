@@ -1,0 +1,31 @@
+.container-todo {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-gap: 2%;
+}
+.container-columns {
+  display: flex;
+  height: 73vh;
+  grid-gap: 2%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.taks::-webkit-scrollbar,
+.container-columns::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.taks::-webkit-scrollbar-thumb,
+.container-columns::-webkit-scrollbar-thumb {
+  border-radius: 0.5em;
+  background-color: #bbbbbb;
+}
+
+.button-add-list {
+  display: flex;
+  background-color: #dae4fd;
+  color: #2f80ed;
+  height: 37px;
+  justify-content: space-between;
+}

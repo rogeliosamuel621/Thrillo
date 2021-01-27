@@ -1,2 +1,5 @@
 # Thrillo
-A trello clone
+
+## Status
+
+development

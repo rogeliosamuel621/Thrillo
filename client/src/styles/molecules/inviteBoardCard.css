@@ -1,0 +1,67 @@
+.container-invite-board-modal {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+.container-invite-board-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all 500ms ease;
+}
+.container-invite-board {
+  margin: 9.5em 17em;
+  width: 286px;
+  height: 380px;
+  border-radius: 8px;
+  padding: 0.1px;
+  background-color: #eeeeee;
+  box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.4);
+  transition: all 500ms ease;
+}
+.container-invite-board-body {
+  display: grid;
+  grid-template-rows: 60px 50px 162px 50px;
+  grid-gap: 0.4em;
+  margin: 0.6em;
+}
+.search-invite-board {
+  width: auto;
+  height: 160px;
+  background-color: #fff;
+  border-radius: 12px;
+}
+.row-search-invite-board {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.container-invite-board div > button {
+  color: #fff;
+  background-color: #2f80ed;
+  width: 80px;
+  height: 28px;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.container-input {
+  position: relative;
+}
+.button-search {
+  display: flex;
+  position: absolute;
+  bottom: 12px;
+  right: 2px;
+  width: 24px;
+  height: 24px;
+  padding: 6px;
+  border-radius: 8px;
+  background-color: #2f80ed;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
